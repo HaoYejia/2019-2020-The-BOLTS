@@ -66,9 +66,11 @@ public class BasicOpMode_Iterative extends OpMode
     public void init() {
         telemetry.addData("Status", "Initialized");
 
-        // Initialize the hardware variables. Note that the strings used here as parameters
-        // to 'get' must correspond to the names assigned during the robot configuration
-        // step (using the FTC Robot Controller app on the phone).
+        /**
+         * Initialize the hardware variables. Note that the strings used here as parameters
+         * to 'get' must correspond to the names assigned during the robot configuration
+         * step (using the FTC Robot Controller app on the phone).
+         */
         leftDrive  = hardwareMap.get(DcMotor.class, "left_drive");
         rightDrive = hardwareMap.get(DcMotor.class, "right_drive");
 
@@ -81,26 +83,32 @@ public class BasicOpMode_Iterative extends OpMode
         telemetry.addData("Status", "Initialized");
     }
 
-    /*
-     * Code to run REPEATEDLY after the driver hits INIT, but before they hit PLAY
-     */
+
     @Override
     public void init_loop() {
+        /**
+         * Code to run REPEATEDLY after the driver hits INIT, but before they hit PLAY
+         */
     }
 
-    /*
-     * Code to run ONCE when the driver hits PLAY
-     */
+
     @Override
     public void start() {
+
         runtime.reset();
+
+        /**
+         * Code to run ONCE when the driver hits PLAY
+         */
     }
 
-    /*
-     * Code to run REPEATEDLY after the driver hits PLAY but before they hit STOP
-     */
+
     @Override
     public void loop() {
+        /**
+         * Code to run REPEATEDLY after the driver hits PLAY but before they hit STOP
+         */
+
         // Setup a variable for each drive wheel to save power level for telemetry
         double leftPower;
         double rightPower;
@@ -129,11 +137,12 @@ public class BasicOpMode_Iterative extends OpMode
         telemetry.addData("Motors", "left (%.2f), right (%.2f)", leftPower, rightPower);
     }
 
-    /*
-     * Code to run ONCE after the driver hits STOP
-     */
+
     @Override
     public void stop() {
+        /**
+         * Code to run ONCE after the driver hits STOP
+         */
     }
 
 }
